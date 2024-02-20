@@ -6,7 +6,7 @@
   function draw() {
     var date = new Date();
     g.reset(); // reset the graphics context to defaults (color/font/etc) 
-    g.drawRect(this.x, this.y, this.x+21, this.y+21);
+    g.drawRect(this.x+5, this.y, this.x+26, this.y+21);
 //    g.drawRect(this.x, this.y, this.x+2, this.y+2);
 
 //    g.setColor(0x0000FF);
