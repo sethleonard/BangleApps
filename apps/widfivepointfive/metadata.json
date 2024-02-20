@@ -1,0 +1,13 @@
+{
+  "id": "widfivepointfive",
+  "name": "5.5 Breaths Per Minute Widget",
+  "version": "0.01",
+  "description": "Displays a guide for inhales and exhales every 5.5 seconds (5.5 Breaths per Minute)",
+  "icon": "widget.png",
+  "type": "widget",
+  "tags": "widget,breath",
+  "supports": ["BANGLEJS2"],
+  "storage": [
+    {"name":"widfivepointfive.wid.js","url":"widget.js"}
+  ]
+}
