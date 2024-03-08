@@ -1,7 +1,7 @@
 require("Font8x16").add(Graphics);
 
 (() => {
-  var width = 35; // width of the widget
+  var width = 38; // width of the widget
   
   function draw() {
     g.reset(); // reset the graphics context to defaults (color/font/etc)
@@ -16,16 +16,16 @@ require("Font8x16").add(Graphics);
       color += Math.random() < 0.5 ? '00' : 'FF';
     }
     
-    g.setColor(color);
+//    g.setColor(color);
     
-    g.drawRect(this.x+2, this.y+2, this.x+width-1, this.y+19); // check the bounds!
+    g.drawRect(this.x+5, this.y+3, this.x+width-1, this.y+20); // check the bounds!
     
-    g.drawString(text, this.x+5, this.y+4);
+    g.drawString(text, this.x+8, this.y+4);
   }
 
   setInterval(function() {
     WIDGETS["widictm"].draw(WIDGETS["widictm"]);
-  }, 10*60000); // update every 10 minutes
+  }, 15*60000); // update every 15 minutes
 
   // add your widget
   WIDGETS["widictm"]={
