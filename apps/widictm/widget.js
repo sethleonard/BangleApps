@@ -1,7 +1,7 @@
 require("Font8x16").add(Graphics);
 
 (() => {
-  var width = 43; // width of the widget
+  var width = 41; // width of the widget
   
   function draw() {
     g.reset(); // reset the graphics context to defaults (color/font/etc)
@@ -18,9 +18,9 @@ require("Font8x16").add(Graphics);
     
 //    g.setColor(color);
     
-    g.drawRect(this.x+10, this.y+3, this.x+width-1, this.y+20); // check the bounds!
+    g.drawRect(this.x+8, this.y+3, this.x+width-1, this.y+20); // check the bounds!
     
-    g.drawString(text, this.x+13, this.y+4);
+    g.drawString(text, this.x+11, this.y+4);
   }
 
   setInterval(function() {
