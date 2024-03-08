@@ -20,7 +20,7 @@ require("Font8x16").add(Graphics);
     
     g.drawRect(this.x+5, this.y+3, this.x+width-1, this.y+20); // check the bounds!
     
-    g.drawString(text, this.x+8, this.y+6);
+    g.drawString(text, this.x+8, this.y+5);
   }
 
   setInterval(function() {
