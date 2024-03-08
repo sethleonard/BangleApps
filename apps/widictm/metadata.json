@@ -1,7 +1,7 @@
 {
   "id": "widictm",
   "name": "ICTM: I Choose This Moment",
-  "version": "0.06",
+  "version": "0.07",
   "description": "Displays a reminder that you have already chosen this moment.",
   "icon": "widget.png",
   "type": "widget",
