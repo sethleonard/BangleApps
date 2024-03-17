@@ -8,11 +8,15 @@ Graphics.prototype.setFontRoboto = function() {
   );
 }
 
+require("FontTeletext10x18Ascii").add(Graphics);
+
 var width = 100;
 var height = 42;
 
 let currentDirection = 1;
 let currentHeight = 0;
+
+let currentStrength = 0.1;
 
 var step = (height-2)/10;
 
@@ -53,7 +57,7 @@ function draw() {
       if(currentHeight > height-2) {
         currentDirection = 0;
         currentHeight = 0;
-        Bangle.buzz(200,0.1);
+        Bangle.buzz(200,currentStrength);
       }
     } else {
       g.clearRect(x+1, y+currentHeight+1, x+width-2, y+currentHeight+step);
@@ -61,9 +65,18 @@ function draw() {
       if(currentHeight >= height-2) {
         currentDirection = 1;
         currentHeight = step;
-        Bangle.buzz(150,0.1);
+        Bangle.buzz(150,currentStrength);
       }
     }
+}
+
+function drawConfig() {
+    g.clearRect(0,y-25,g.getWidth(),y-1);
+    var strength = currentStrength * 10;
+    g.setFontAlign(0,0).setFont("Teletext10x18Ascii");
+    g.drawString(strength,g.getWidth()/2,y-15);
+    g.drawString("-",g.getWidth()/2-25,y-15);
+    g.drawString("+",g.getWidth()/2+25,y-15);
 }
 
 // Clear the screen once, at startup
@@ -74,7 +87,19 @@ g.drawRect(x, y, x+width-1, y+height-1);
 
 Bangle.buzz(150,0.1);
 
+Bangle.on('touch', function(button, xy) {
+  if(xy.x < g.getWidth()/2) {
+    if (currentStrength >= 0.2) {
+      currentStrength -= 0.1;
+    }
+  } else if (currentStrength < .9) {
+    currentStrength += 0.1;
+  }
+  drawConfig();
+});
+
 // draw immediately at first
+drawConfig();
 draw();
 drawTime();
 
