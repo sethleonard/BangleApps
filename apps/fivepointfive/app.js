@@ -6,7 +6,7 @@ Graphics.prototype.setFontRoboto = function() {
     atob("BwkODg4ODg4ODg4OBw=="),
     24|65536
   );
-}
+};
 
 require("FontTeletext10x18Ascii").add(Graphics);
 
@@ -17,6 +17,8 @@ let currentDirection = 1;
 let currentHeight = 0;
 
 let currentStrength = 0.1;
+let currentLength1 = 150;
+let currentLength2 = 200;
 
 var step = (height-2)/10;
 
@@ -57,7 +59,7 @@ function draw() {
       if(currentHeight > height-2) {
         currentDirection = 0;
         currentHeight = 0;
-        Bangle.buzz(200,currentStrength);
+        Bangle.buzz(currentLength2,currentStrength);
       }
     } else {
       g.clearRect(x+1, y+currentHeight+1, x+width-2, y+currentHeight+step);
@@ -65,14 +67,14 @@ function draw() {
       if(currentHeight >= height-2) {
         currentDirection = 1;
         currentHeight = step;
-        Bangle.buzz(150,currentStrength);
+        Bangle.buzz(currentLength1,currentStrength);
       }
     }
 }
 
 function drawConfig() {
     g.clearRect(0,y-25,g.getWidth(),y-1);
-    var strength = currentStrength * 10;
+    var strength = (currentStrength+0.1) * 5;
     g.setFontAlign(0,0).setFont("Teletext10x18Ascii");
     g.drawString(strength,g.getWidth()/2,y-15);
     g.drawString("-",g.getWidth()/2-25,y-15);
@@ -85,15 +87,19 @@ g.clear();
 // Draw container
 g.drawRect(x, y, x+width-1, y+height-1);
 
-Bangle.buzz(150,0.1);
+Bangle.buzz(currentLength1,currentStrength);
 
 Bangle.on('touch', function(button, xy) {
   if(xy.x < g.getWidth()/2) {
     if (currentStrength >= 0.2) {
-      currentStrength -= 0.1;
+      currentStrength -= 0.2;
+      currentLength1 -= 20;
+      currentLength2 -= 25;
     }
-  } else if (currentStrength < .9) {
-    currentStrength += 0.1;
+  } else if (currentStrength < 0.8) {
+    currentStrength += 0.2;
+    currentLength1 += 20;
+    currentLength2 += 25;
   }
   drawConfig();
 });
