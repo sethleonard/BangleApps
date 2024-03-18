@@ -34,6 +34,12 @@
     WIDGETS["widfivepointfive"].draw(WIDGETS["widfivepointfive"]);
   }, 550); // update every .55 seconds
 
+  Bangle.on('touch', function(button, xy) {
+    if(xy.y < 21) {
+      load("fivepointfive.app.js");
+    }
+  });
+
   // add your widget
   WIDGETS["widfivepointfive"]={
     area:"tl", // tl (top left), tr (top right), bl (bottom left), br (bottom right), be aware that not all apps support widgets at the bottom of the screen
