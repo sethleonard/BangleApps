@@ -93,13 +93,13 @@ Bangle.on('touch', function(button, xy) {
   if(xy.x < g.getWidth()/2) {
     if (currentStrength >= 0.2) {
       currentStrength -= 0.2;
-      currentLength1 -= 20;
-      currentLength2 -= 25;
+      currentLength1 -= 40;
+      currentLength2 -= 50;
     }
   } else if (currentStrength < 0.8) {
     currentStrength += 0.2;
-    currentLength1 += 20;
-    currentLength2 += 25;
+    currentLength1 += 40;
+    currentLength2 += 50;
   }
   drawConfig();
 });
