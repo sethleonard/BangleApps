@@ -9,7 +9,9 @@ require("Font8x16").add(Graphics);
     g.setFont("8x16");
     // Use 'locale' module to get a shortened month name
     // in the correct language    
-    var text = "ICTM";
+    const strings = ['ICTM', 'WWIH', 'WFMI'];
+    const randomIndex = Math.floor(Math.random() * strings.length);
+    const text = strings[randomIndex];
     
     let color = '#';
     for (let i = 0; i < 3; i++) {
