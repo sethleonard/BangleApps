@@ -1,10 +1,11 @@
 require("Font8x16").add(Graphics);
 
 (() => {
-  var width = 38; // width of the widget
+  var width = 40; // width of the widget
   
   function draw() {
     g.reset(); // reset the graphics context to defaults (color/font/etc)
+    g.clear();
 //    g.setFontAlign(0,0); // center fonts    
     g.setFont("8x16");
     // Use 'locale' module to get a shortened month name
