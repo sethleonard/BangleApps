@@ -1,7 +1,7 @@
 {
   "id": "widictm",
   "name": "ICTM",
-  "version": "0.3",
+  "version": "0.4",
   "description": "Displays a helpful text acronyms.",
   "icon": "widget.png",
   "type": "widget",
