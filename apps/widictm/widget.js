@@ -5,11 +5,9 @@ require("Font8x16").add(Graphics);
   
   function draw() {
     g.reset(); // reset the graphics context to defaults (color/font/etc)
-    g.clear();
+    g.clearRect(this.x+5, this.y+3, this.x+width-1, this.y+20);
 //    g.setFontAlign(0,0); // center fonts    
-    g.setFont("8x16");
-    // Use 'locale' module to get a shortened month name
-    // in the correct language    
+    g.setFont("8x16"); 
     const strings = ['ICTM', 'WWIH', 'WFMI'];
     const randomIndex = Math.floor(Math.random() * strings.length);
     const text = strings[randomIndex];
