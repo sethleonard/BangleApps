@@ -8,7 +8,7 @@ require("Font8x16").add(Graphics);
     g.clearRect(this.x+5, this.y+3, this.x+width-1, this.y+20);
 //    g.setFontAlign(0,0); // center fonts    
     g.setFont("8x16"); 
-    const strings = ['ICTM', 'WWIH', 'WFMI'];
+    const strings = ['ICTM', 'WWIH', 'WFMI', 'IYIL'];
     const randomIndex = Math.floor(Math.random() * strings.length);
     const text = strings[randomIndex];
     
